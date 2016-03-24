@@ -1,9 +1,14 @@
+var Webpack = require('webpack');
+
 module.exports = {
     entry: './src/render.js',
     output: {
         path: './public',
         filename: 'bundle.js'
     },
+    plugins: [
+    new Webpack.optimize.UglifyJsPlugin({minimize: true})
+  ],
     module: {
         loaders: [
             {
